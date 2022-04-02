@@ -21,9 +21,18 @@
   },
   "login": {
     "login": "Login",
-    "username": "Username",
+    "email": "Email",
+    "enter-your-email": "Please enter your email",
     "password": "Password",
-    "userpass-wrong": "Invalid username or password!"
+    "enter-your-password": "Please enter your password",
+    "userpass-wrong": "Invalid email or password!",
+    "btn-login": "Login",
+    "forgot-password": "Forgot your password?",
+    "remember-me": "Remember me",
+    "invalid-email": "Invalid Email!",
+    "invalid-password": "Password must be more than 6 charaters.",
+    "password-wrong": "Password is wrong!",
+    "email-wrong": "Email is not exits. Please check your email!."
   },
   "menu": {
     "system": {

@@ -21,9 +21,18 @@
   },
   "login": {
     "login": "Đăng nhập",
-    "username": "Tên đăng nhập",
+    "email": "Email",
+    "enter-your-email": "Vui lòng nhập email",
     "password": "Mật khẩu",
-    "userpass-wrong": "Sai tên đăng nhập hoặc mật khẩu!"
+    "enter-your-password": "Vui lòng nhập mật khẩu",
+    "userpass-wrong": "Sai tên email hoặc mật khẩu!",
+    "btn-login": "Đăng nhập",
+    "forgot-password": "Quên mật khẩu ?",
+    "remember-me": "Nhớ tài khoản và mật khẩu",
+    "invalid-email": "Email không hợp lệ.",
+    "invalid-password": "Mật khẩu phải lớn hơn 6 ký tự.",
+    "password-wrong": "Mật khẩu không chính xác!",
+    "email-wrong": "Email không tồn tại. Vui lòng kiểm tra lại email."
   },
   "menu": {
     "system": {
