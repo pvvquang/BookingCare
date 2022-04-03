@@ -32,7 +32,8 @@
     "invalid-email": "Invalid Email!",
     "invalid-password": "Password must be more than 6 charaters.",
     "password-wrong": "Password is wrong!",
-    "email-wrong": "Email is not exits. Please check your email!."
+    "email-wrong": "Email is not exits. Please check your email!.",
+    "error-message": "Field is required!"
   },
   "menu": {
     "system": {

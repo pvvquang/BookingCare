@@ -1,0 +1,56 @@
+<template>
+  <div class="container">
+    <div class="row justify-center">
+      <div class="col-12 text-center mt-4 mb-1 text-uppercase font-weight-bold">
+        Edit user information width id userInfo.id
+      </div>
+      <div class="col-10 offset-1">
+        <form action="/put-crud" method="POST">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputFirstName">First Name</label>
+              <input
+                type="text"
+                name="firstName"
+                class="form-control"
+                id="inputFirstName"
+                placeholder="First Name"
+                value="<%= userInfo.firstName%>"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputLastName">Last Name</label>
+              <input
+                type="text"
+                name="lastName"
+                class="form-control"
+                id="inputLastName"
+                placeholder="Last Name"
+                value="<%= userInfo.lastName%>"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input
+              type="text"
+              name="address"
+              class="form-control"
+              id="inputAddress"
+              placeholder="1234 Main St"
+              value="<%= userInfo.address%>"
+            />
+          </div>
+          <input type="text" name="id" value="<%= userInfo.id%>" hidden />
+          <button type="submit" class="btn btn-primary">Edit User</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style></style>

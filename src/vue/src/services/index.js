@@ -35,7 +35,7 @@ const api = async (apiName, apiParams) => {
     const { data } = await request(config);
     return {
       success: true,
-      data,
+      data: data.data,
     };
   } catch (error) {
     if (error?.response?.status == 401 || error?.response?.status === 403) {

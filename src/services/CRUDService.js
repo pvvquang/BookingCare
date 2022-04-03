@@ -104,4 +104,5 @@ module.exports = {
   getUserInfoById,
   updateUserInfoById,
   deleteUserByID,
+  hashUserPassword,
 };

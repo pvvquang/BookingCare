@@ -72,7 +72,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   data() {
@@ -91,6 +91,11 @@ export default {
     };
   },
   watch: {},
+  computed: {
+    ...mapGetters("login", {
+      isLoggedIn: "getIsLoggedIn",
+    }),
+  },
   methods: {
     ...mapActions("login", ["login"]),
     async submit() {
@@ -102,6 +107,9 @@ export default {
         password: this.password,
       };
       await this.login(data);
+      if (this.isLoggedIn) {
+        this.$router.push({ name: "User Manager" });
+      }
     },
     showPassword() {
       this.inputType = this.inputType === "password" ? "text" : "password";
