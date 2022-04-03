@@ -1,0 +1,254 @@
+$color-grey-3: #333333;
+$color-grey-6: #666666;
+$color-grey-9: #999999;
+$color-grey-dc: #dcdcdc;
+$color-grey-f8: #f8f8f8;
+$color-light-blue: #007bc3;
+$color-lighter-blue: #22aee5;
+$color-dark-blue: #003994;
+$color-greyish-blue: #e7f1fd;
+$color-whitish-blue: #f2f8fc;
+$color-white: #ffffff;
+$color-white-f8: #f8f8f8;
+$color-white-fabc: #fafbfc;
+$color-red: #ed5d5d;
+$color-light-red: #fc9c95;
+$color-lighter-red: #fff7f7;
+$color-blue-green: #45d1d1;
+$color-blue-pale: #f4f7fb;
+$color-green: #45d1c9;
+$color-yellow: #f8bf2d;
+$color-light-yellow: #fefaee;
+
+$color-purple-5: #515e89;
+$color-plum-cc: #cc6677;
+$color-purple-8: #808cba;
+
+$color-floating-message-success-bg: #f0f4f8;
+$color-floating-message-error-bg: #ffe3ec;
+$color-floating-message-warning-bg: #ffe3e3;
+
+$color-floating-message-success-color: #627d98;
+$color-floating-message-error-color: #da127d;
+$color-floating-message-warning-color: #ef4e4e;
+
+$color-overlay: rgba(0, 0, 0, 0.15);
+$color-primary: $color-light-blue;
+$color-secondary: $color-lighter-blue;
+$color-tertiary: $color-dark-blue;
+$color-error: $color-red;
+$color-border: $color-grey-dc;
+$color-text: $color-grey-3;
+
+$modal-background: $color-white;
+$modal-box-shadow: 0px 4px 20px rgba(102, 102, 102, 0.3);
+$modal-border-radius: 2px;
+$modal-title-font-size: 24px;
+$modal-title-line-height: 42px;
+$modal-description-font-size: 14px;
+$modal-description-line-height: 22px;
+$modal-description-color: $color-grey-6;
+$modal-title-color: #333;
+
+$input-border: 1px solid $color-border;
+$input-border-invalid: 1px solid $color-red;
+$input-border-radius: 3px;
+$input-font-color: $color-grey-3;
+$input-placeholder-font-color: $color-grey-9;
+$input-font-size: 14px;
+$input-default-height: 32px;
+$input-label-font-color: $color-grey-6;
+$input-error-message-font-color: $color-red;
+$input-background-color: $color-white;
+$input-radio-selected: $color-green;
+$input-radio-unselected: $color-grey-3;
+$input-color-disabled: $color-grey-9;
+
+$header-height: 64px;
+$global-navigation-width: 72px;
+$global-header-height: 64px;
+$global-footer-height: 52px;
+$global-header-footer-height: 116px;
+
+:export {
+  globalNavigationWidth: $global-navigation-width;
+}
+
+@mixin input-outline($color: $color-primary) {
+  outline: none;
+  box-shadow: 0px 0px 0px 2px $color;
+}
+
+@mixin button-reset {
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  cursor: pointer;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+
+.button-reset {
+  @include button-reset;
+}
+
+@mixin break-text {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+@mixin ellipsis-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin line-clamp($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+$notification-success-background-color: $color-floating-message-success-bg;
+$notification-error-background-color: $color-floating-message-error-bg;
+$notification-info-background-color: $color-light-blue;
+$notification-warning-background-color: $color-floating-message-warning-bg;
+
+$input-option-height: 40px;
+$input-option-font-color: $color-grey-6;
+$input-option-hover-background-color: $color-greyish-blue;
+$input-option-hover-font-color: $input-font-color;
+
+$input-icon-hover-color: rgba($color-dark-blue, 0.05);
+
+$formcard-content-width: 1059px;
+$formcard-gapsize: 17px;
+
+@mixin textarea {
+  margin-block-start: auto;
+  margin-block-end: auto;
+  border: 0;
+  padding-inline-start: auto;
+  padding-inline-end: auto;
+  background-color: $input-background-color;
+  color: inherit;
+  font: inherit;
+  font-size: $input-font-size;
+  color: $input-font-color;
+  text-rendering: auto;
+  vertical-align: baseline;
+  cursor: auto;
+  resize: both;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-clip-box: content-box;
+}
+
+$required-label-background-color: $color-light-red;
+$required-label-font-color: white;
+
+$optional-label-background-color: $color-grey-9;
+$optional-label-font-color: white;
+
+$employee-information-page-content-width: 840px;
+$main-tab-bar-height: 48px;
+$main-tab-bar-border-height: 1px;
+$personal-information-content-max-height: calc(
+  100vh - #{$header-height + $main-tab-bar-height + $main-tab-bar-border-height}
+);
+
+@mixin break-text {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+@mixin history-event-colors {
+  --history-event-in-color: #{$color-primary};
+  --history-event-leave-color: #{$color-light-red};
+  --history-event-career-color: #{$color-yellow};
+  --history-event-other-color: #{$color-blue-green};
+  --history-event-in-background-color: rgba(231, 241, 253, 0.2);
+  --history-event-leave-background-color: rgba(255, 239, 238, 0.2);
+  --history-event-career-background-color: rgba(254, 245, 221, 0.2);
+  --history-event-other-background-color: rgba(225, 248, 248, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+$mobile: 767px;
+$tablet: 768px;
+$tablet-pro: 1024px;
+$medium-desktop: 1279px;
+$desktop: 1279px;
+$desktop-hd: 1440px;
+$medium-mobile: 414px;
+$small-mobile: 320px;
+@mixin mediaMaxWidth($breakpoints) {
+  @media only screen and (max-width: $breakpoints) {
+    @content;
+  }
+}
+
+@mixin mediaMinWidth($breakpoints) {
+  @media only screen and (min-width: $breakpoints) {
+    @content;
+  }
+}
+@media only screen and (max-width: $mobile) {
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  select:focus,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+@mixin custom-scroll-bar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    @media (max-width: $mobile) {
+      width: 4px;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #dcdcdc;
+    border-radius: 12px;
+  }
+}

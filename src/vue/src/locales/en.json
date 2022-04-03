@@ -33,7 +33,11 @@
     "invalid-password": "Password must be more than 6 charaters.",
     "password-wrong": "Password is wrong!",
     "email-wrong": "Email is not exits. Please check your email!.",
-    "error-message": "Field is required!"
+    "error-message": "Field is required!",
+    "delete-user-message-success": "Delete done.",
+    "update-user-success": "Update done.",
+    "create-user-success": "User is add success!",
+    "toast-message-error": "Error! An error occurred. Please try again later"
   },
   "menu": {
     "system": {

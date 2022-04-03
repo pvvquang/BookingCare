@@ -17,7 +17,7 @@
                 placeholder="First Name"
                 value="<%= userInfo.firstName%>"
               />
-            </div>
+          </div>
             <div class="form-group col-md-6">
               <label for="inputLastName">Last Name</label>
               <input

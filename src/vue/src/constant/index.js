@@ -1,0 +1,15 @@
+const TOAST_MESSAGE = {
+  SUCCESS: "SUCCESS",
+  WARNING: "WARNING",
+  INFO: "INFO",
+  ERROR: "ERROR",
+};
+
+export const TYPE_POPUP = {
+  POPUP_CREATE_NEW_USER: "POPUP_CREATE_NEW_USER",
+  POPUP_EDIT_USER: "POPUP_EDIT_USER",
+};
+
+export default {
+  TOAST_MESSAGE,
+};

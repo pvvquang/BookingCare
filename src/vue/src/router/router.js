@@ -13,7 +13,7 @@ const routes = [
       store.commit("login/GET_USER_FROM_LOCAL_STORAGE");
       next();
     },
-    component: () => import("../App.vue"),
+    component: () => import("../views/MainPage.vue"),
     children: [
       {
         path: "",

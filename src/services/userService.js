@@ -51,6 +51,7 @@ const checkUserEmail = (email) => {
   return new Promise(async (resolve, reject) => {
     try {
       const user = await db.User.findOne({ where: { email } });
+      console.log(user);
       if (user) {
         resolve(true);
       } else {
@@ -80,9 +81,10 @@ const handleGetUsers = (id) => {
 
 const createNewUser = (data) => {
   return new Promise(async (resolve, reject) => {
+    console.log(data);
     try {
       const checkEmail = await checkUserEmail(data.email);
-      if (!checkEmail) {
+      if (checkEmail) {
         resolve({
           errCode: 1,
           message: "Your email is readly in used. Please try another email!",
@@ -116,15 +118,14 @@ function getUserInfoById(userId) {
       let userInfo = new Promise((res, rej) => {
         const user = db.User.findOne({ where: { id: userId } });
         if (user) {
-          res({
-            errCode: 0,
-            message: "OK",
-          });
+          res(user);
         } else {
-          rej("user not have");
+          res({
+            errCode: 2,
+            message: "The user is not exits!",
+          });
         }
       });
-
       res(userInfo);
     } catch (e) {
       rej(e);

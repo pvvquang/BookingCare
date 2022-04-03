@@ -18,7 +18,11 @@
     "fail-to-load-all-code": "Không thể tải về dữ liệu allcode",
     "sum": "Tổng",
     "date-range-invalid": "Khoảng thời gian không hợp lệ",
-    "error-message": "Vui lòng nhập trường này! "
+    "error-message": "Vui lòng nhập trường này! ",
+    "delete-user-success": "Đã xoá thành công.",
+    "update-user-success": "Đã sửa thành công.",
+    "create-user-success": "Đã thêm người dùng thành công.",
+    "toast-message-error": "Đã có lỗi xảy ra. Vui lòng thử lại!!"
   },
   "login": {
     "login": "Đăng nhập",

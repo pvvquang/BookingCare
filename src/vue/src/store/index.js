@@ -2,14 +2,14 @@ import Vue from "vue";
 import VueX from "vuex";
 import login from "./login";
 import userManage from "./userManage";
+import common from "./common";
 
 Vue.use(VueX);
 
-const store = new VueX.Store({
+export default new VueX.Store({
   modules: {
     login,
     userManage,
+    common,
   },
 });
-
-export default store;

@@ -73,6 +73,7 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import utils from "../../utils/index";
 
 export default {
   data() {
@@ -99,8 +100,12 @@ export default {
   methods: {
     ...mapActions("login", ["login"]),
     async submit() {
-      this.validate("email", this.email);
-      this.validate("password", this.password);
+      const errorEmail = utils.validateEmailPassword("email", this.email);
+      const errorPass = utils.validateEmailPassword("password", this.password);
+      this.emailError.status = errorEmail.status;
+      this.emailError.message = errorEmail.message;
+      this.passwordError.status = errorPass.status;
+      this.passwordError.message = errorPass.message;
       if (!this.email && !this.password) return;
       const data = {
         email: this.email,
@@ -114,43 +119,27 @@ export default {
     showPassword() {
       this.inputType = this.inputType === "password" ? "text" : "password";
     },
-    validate(type, value) {
-      switch (type) {
-        case "email":
-          if (value) {
-            //eslint-disable-next-line
-            const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            const error = !regex.test(value);
-            this.emailError.status = error;
-            this.emailError.message = error
-              ? this.$t("login.invalid-email")
-              : "";
-          } else {
-            this.emailError.status = true;
-            this.emailError.message = this.$t("login.enter-your-email");
-          }
-          break;
-        case "password":
-          if (value) {
-            const error = value.length < 6 ? true : false;
-            this.passwordError.status = error;
-            this.passwordError.message = error
-              ? this.$t("login.invalid-password")
-              : "";
-          } else {
-            this.passwordError.status = true;
-            this.passwordError.message = this.$t("login.enter-your-password");
-          }
-          break;
-      }
-    },
     handleInputChange(e) {
       const { value, name } = e.target;
-      this.validate(name, value);
+      const errorMessage = utils.validateEmailPassword(name, value);
+      if (name === "email") {
+        this.emailError.status = errorMessage.status;
+        this.emailError.message = errorMessage.message;
+      } else {
+        this.passwordError.status = errorMessage.status;
+        this.passwordError.message = errorMessage.message;
+      }
     },
     handleInputBlur({ target }) {
       const { value, name } = target;
-      this.validate(name, value);
+      const errorMessage = utils.validateEmailPassword(name, value);
+      if (name === "email") {
+        this.emailError.status = errorMessage.status;
+        this.emailError.message = errorMessage.message;
+      } else {
+        this.passwordError.status = errorMessage.status;
+        this.passwordError.message = errorMessage.message;
+      }
     },
   },
 };
